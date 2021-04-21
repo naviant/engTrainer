@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EngTrainer</title>
+<style>
+    body{
+        height: 95%;
+        width: 95%;
+        position: absolute;
+    }
+    #main{
+        
+        border: solid red 1px;
+        width: 100%;
+        max-width: 100mm;
+        min-width: 60mm;
+        background-color: azure;
+        margin: auto;
+        height: 50%;
+        min-height: 100mm;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+    }
+    #workSpace{
+        height: 50%;
+        width: 80%;
+        background-color: white;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4vw;
+    }
+</style>
+</head>
+<body>
+<div id='main'>
+    <div id='title'></div>
+    <div id='gear'></div>
+    <div id='workSpace'></div>
+        
+</div>
+</body>
+<script>
+//    получаем 90% ширины блока (для полей по краям), делим на кол-во символов слова, здаем font-size блока 
+//    set или array???
+    let engW=['be','have','do','say','go','get','make','know','think','take'];
+    let ruW=['быть','иметь','делать','говорить','идти','получать','создавать/делать','знать','думать','брать'];
+    let space=document.getElementById('workSpace');
+    let i=0;
+    space.textContent=ruW[i];
+    let f=0;//ru word
+    space.addEventListener('click',func);
+    function func(){
+        if(f==0){
+            space.textContent=engW[i];
+            f=1;
+            i++;
+        }else{
+            space.textContent=ruW[i];
+            f=0;
+        }
+        if(i==9){i=0}
+        
+    }
+    
+    
+</script>
+</html>
